@@ -1,0 +1,12 @@
+version: "2.1"
+
+services:
+  uptimerobot_exporter:
+    build: .
+    restart: unless-stopped
+    net: host
+    environment:
+      UPTIMEROBOT_API_KEY: yourkeyhere
+    ports:
+      - 9705:9705
+    read_only: true
